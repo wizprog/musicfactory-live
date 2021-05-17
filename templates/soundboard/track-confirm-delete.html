@@ -1,0 +1,9 @@
+{% block content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Yes, delete">
+        &nbsp; &nbsp;
+        <a href="{% url 'track-detail' track.pk %}">No, keep it</a>
+    </form>
+    <br>
+{% endblock %}

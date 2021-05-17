@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% if track_list %}
+        <p>Tracks currently in the database ({{track_list.count}}):</p>
+        {% for track in track_list %}
+            <li>
+                <a href="{% url 'track-detail' track.pk %}">{{ track.title }}</a> - <a href="{% url 'track-start-time' track.pk %}">Track start time</a>
+            </li>
+        {% endfor %}
+    {% else %}
+        <p>No tracks in the database currently.</p>
+    {% endif %}
+
+    <br>
+    <br>
+    <p><a href="{% url 'track-create' %}">CREATE NEW TRACK</a></p>
+
+{% endblock content %}

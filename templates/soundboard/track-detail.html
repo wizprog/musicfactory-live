@@ -1,0 +1,9 @@
+{% block content %}
+    {{ track }} <br>
+    <br>   
+    <p>
+        <a href="{% url 'track-update' track.pk %}">Update track</a> <br>
+        <a href="{% url 'track-delete' track.pk %}">Delete track</a> <br>
+        <a href="{% url 'track-list' %}">Track list</a>
+    </p>
+{% endblock %}
