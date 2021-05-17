@@ -4,8 +4,8 @@ class TestCase:
         self.threshold = treshold
 
 def merge_intervals(intervals, treshold):
-    size_of_intervals = len(intervals)
-    if size_of_intervals == 0:
+    number_of_intervals = len(intervals)
+    if number_of_intervals == 0:
         return []
 
     intervals.sort(key = lambda interval: interval[0])
@@ -13,7 +13,7 @@ def merge_intervals(intervals, treshold):
     merged_intervals = []
     merged_intervals.append(intervals[0])
 
-    for index in range(size_of_intervals - 1):
+    for index in range(number_of_intervals - 1):
         original_interval = intervals[index + 1]
 
         merged_interval = merged_intervals.pop()
